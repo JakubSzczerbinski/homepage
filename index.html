@@ -1,152 +1,118 @@
-<!DOCTYPE html>
+
+
 <html>
 <head>
-<title>Jakub Szczerbinski homepage</title>
-<style>
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    margin: 10px;
-  }
-
-  li::before {
-    font-family: monospace;
-    content: ">";
-  }
-
-  a {
-    color: #289cd5;
-  }
-
-  em {
-    color: #e1a126;
-  }
-
-  main {
-    margin-left: 100px;
-    line-height: 32px;
-    font-size: 16px;
-    font-weight: 300;
-    width: 800px;
-    margin: 0 auto;
-  }
-
-  main .text {
-    margin: 0 1em;
-  }
-
-  main h1 {
-    font-style: normal;
-    line-height: 48px;
-    font-size: 40px;
-  }
-
-  nav {
-    padding-top: 30px;
-    width: 300px;
-  }
-
-  body {
-    display: flex;
-    flex-flow: row;
-    color: #f8f8f8;
-    background: #171717;
-    margin: 0;
-    justify-content: center;  
-    font-family: Roboto, Verdana, Arial, sans-serif;
-    font-size: 20px;
-    width: 100%;
-  }
-
-  .console-wrapper {
-    display: flex;
-  }
-
-  .console h1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 0.65em solid transparent; /* The typwriter cursor */
-    letter-spacing: 0.02em;
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin-left: auto;
-    animation: 
-      blink-caret 0.5s step-end infinite;
-  }
-
-  .title {
-    margin-bottom: 2em;
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #f8f8f8 }
-  }
-
-  #profile_photo {
-    width: 400px;
-    height: 100%;
-  }
-
-  article {
-    display: flex;
-  }
-</style>
+    <title>Jakub Szczerbiński | homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+    rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            --background-color: cadetblue;
+            --dominant-color: white;
+            --text-color: black;
+            --accent-color-1: #3c3f9f;
+            --accent-color-2: #f0f1f8;
+            background-color: var(--background-color);
+            background-image: url("images/background.jpg");
+            color: var(--text-color);
+            padding-top: 10em;
+        }
+        
+        a {
+            color: var(--accent-color-1);
+            text-decoration: none;
+        }
+        
+        main {
+            display: flex;
+            align-items: stretch;
+            border-radius: 1em;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+            padding: 1em;
+            width: 50%;
+            height: 35em;
+            margin: auto;
+            background-color: var(--dominant-color);
+        }
+        
+        h2 {
+            font-size: 1.4em;
+            font-family: 'Comfortaa', cursive;
+            color: var(--accent-color-1);
+        }
+        nav {
+            text-align: center;
+            padding: 2em;
+            padding-top: 4em;
+            width: 25em;
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: var(--text-color);
+        }
+        
+        #portrait {
+            margin: auto;
+            border-radius: 50%;
+            width: 12em;
+            height: 12em;
+        }
+        
+        .material-icons-round {
+            vertical-align: middle;
+            padding-bottom: 2px;
+            padding-right: 5px;
+        }
+        
+        #details {
+            text-align: left;
+            line-height: 2em;
+            padding-top: 2em;
+        }
+        
+        content {
+            padding: 2em;
+        }
+        
+    </style>
 </head>
 <body>
-  <!-- <nav>
-    <ul>
-      <li> <a href="index.html"> About me </a> </li>
-      <li> <a href="write.html"> Things i wrote </a> </li>
-      <li> <a href="works.html"> Things i did </a> </li>
-    </ul>
-  </nav> -->
-  <main>
-    <div class="title">
-      <div class="console-wrapper">
-        <div class="console" title="jakub.szczerbiń.ski | homepage">
-        </div>
-      </div>
-    </div>
-    <article>
-      <img id="profile_photo" src="img/face.jpg">
-      <div class="text">
-        <h1> About me </h1>
-        <p> Hi! My name is Jakub Szczerbiński and I am software developer and computer science student interested in compilers and programming languages. </p>
-
-        <p> If you want to contact me, you can reach me through my email: <em>jakub(at)szczerbin.ski</em> or via <a href="https://www.linkedin.com/in/jakub-szczerbinski/">LinkedIn</a>.</p>
-
-        <p> You can also check out my <a href="https://github.com/JakubSzczerbinski">Github</a>. </p>
-      </div>
-    </article>
-  </main>
-  <script type="text/javascript">
-    const type_letter = (header, text) => () => {
-      if (text !== "") {
-        header.textContent += text.substring(0, 1);
-        setTimeout(
-          type_letter(header, text.substring(1)),
-          Math.floor(60 + Math.random() * 50));
-      }
-      else {
-        header.style.animation = 'none';
-      }
-    }
-  
-    window.onload = () => {
-      const consoles = document.getElementsByClassName("console");
-      for (let cons of consoles) {
-        const text = cons.title
-        const header = document.createElement('h1');
-        cons.appendChild(header);
-        type_letter(header, text)();
-      }
-    }
-  </script>
+    <main>
+        <nav>
+            <img id="portrait" src="images/portrait.jpg"/>
+            <h2> Jakub Szczerbiński </h2>
+            <div id="details">
+                <span class="material-icons-round">
+                    email
+                </span> 
+                jakub(at)szczerbin.ski 
+                <br/>
+                <span class="material-icons-round">
+                    code
+                </span>
+                <a href="https://github.com/JakubSzczerbinski">Github</a>
+                <br/>
+                <span class="material-icons-round">
+                    group
+                </span>
+                
+                <a href="https://www.linkedin.com/in/jakub-szczerbinski/">LinkedIn</a>
+                
+            </div>
+        </nav>
+        <content>
+            <h2> About me </h2>
+            <p> Hello! My name is Jakub Szczerbiński and I am software engineer. If your want to contact me, you can do it
+                through LinkedIn or email.
+            </p>
+            <p> 
+                Here is a link to my <a href="docs/BachelorThesis.pdf"> Bachelor thesis (in polish)</a>
+            </p>
+        </content>
+    </main>
+    
 </body>
 </html>
-
