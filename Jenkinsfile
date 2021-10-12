@@ -1,9 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('dummy') {
+        stage('deploy') {
             steps {
-                sh 'echo "Dummy stage"'
+                withCredentials([string(credentialsId: 'HOMESERVER_ADRESS', variable: 'HOMESERVER_IP')]) {
+                    sh 'scp -r * root@$HOMESERVER_IP:/var/www/html/
+                }
             }
         }
     }
